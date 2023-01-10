@@ -1,6 +1,6 @@
 /*
 -----------------------------------------dht11-----------------------------------
-connect the dht11 sensor with data pin  pin 4;
+connect the dht11 sensor with data pin 4;
 connect the motor to pin 2;
 display it on LCD;
 if the temperature >28 then start to run the motor ;
@@ -92,14 +92,17 @@ void DHT::DHT_main()
 
 void DHT::DHT_fanControl(int temp)
 {
-  if(temp<27){
+  if(temp<28){
     digitalWrite(motor,LOW);
-  }else if(temp>=27 && temp<=30){
+  }else if(temp>=28 && temp<=30){
     digitalWrite(motor,HIGH);
     delay(400);
-  }else if(temp>=30 && temp<=33){
+  }else if(temp>=30 && temp<=32){
     digitalWrite(motor,HIGH);
     delay(800);
+  }else if(temp>32){
+    digitalWrite(motor,HIGH);
+    delay(1200);
   }
   digitalWrite(motor,LOW);
 }
