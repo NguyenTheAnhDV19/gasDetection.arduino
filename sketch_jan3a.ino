@@ -120,12 +120,12 @@ void MQ2::MQ2_main()
     lcd->setCursor(0,0);
     lcd->print("Gas detection!!!");
     buzzer(true);
-    while(value>=30){};
+  }else{
+    buzzer(false);
+    lcd->setCursor(9,0);
+    lcd->print("gas: ");
+    lcd->print(value);
   }
-  buzzer(false);
-  lcd->setCursor(9,0);
-  lcd->print("gas: ");
-  lcd->print(value);
 }
 
 void MQ2::buzzer(bool con)
