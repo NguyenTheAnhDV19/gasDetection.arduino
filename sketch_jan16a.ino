@@ -2,7 +2,7 @@
   this program is used for touchless bin project
   connect the motor to pin D4
 
-  for the HC_SR04 sensor use the pin D7 for trigger and pin 6 for echo
+  for the HC_SR04 sensor use the pin D7 for trigger and pin D6 for echo
 */
 
 #include<Arduino.h>
